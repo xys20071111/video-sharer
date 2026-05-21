@@ -8,7 +8,7 @@ export async function addVideo(
   cid: string,
 ): Promise<boolean> {
   const metadata = await getVideoMetadata(client, cid);
-  const item = db.isVideoExists(cid);
+  const item = await db.isVideoExists(cid);
   if (metadata && !item) {
     db.addVideo(cid, metadata);
     await client.pin.add(cid, { recursive: true });
