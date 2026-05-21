@@ -1,0 +1,27 @@
+{
+  "timestamp": 1782012000000,
+  "videos": [
+    {
+      "cid": "QmdpAidwAsBGptFB3b6A9Pyi5coEbgjHrL3K2Qrsutmj9K",
+      "metadata": {
+        "title": "Big Buck Bunny (HLS Stream)",
+        "description": "A large and lovable rabbit deals with three bullying rodents in this classic open-source animated film by the Blender Foundation. This is served as an HLS playlist folder from IPFS.",
+        "author": "Blender Foundation",
+        "entry": "master.m3u8",
+        "tags": ["animation", "hls", "open-source", "bunny"],
+        "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Big_Buck_Bunny_Screen_Shot.jpg"
+      }
+    },
+    {
+      "cid": "QmXzt7DWeD8uDcrgpajw6DZA6mECuZ4eTwjjyWBxzmLCRV",
+      "metadata": {
+        "title": "IPFS Community Test Video",
+        "description": "A short sample HLS video playlist containing several segment chunks. Ideal for verifying gateway connections and node pin performance.",
+        "author": "IPFS Community",
+        "entry": "index.m3u8",
+        "tags": ["test", "hls", "dev", "sample"],
+        "thumbnail": ""
+      }
+    }
+  ]
+}
