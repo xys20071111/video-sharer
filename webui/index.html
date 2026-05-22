@@ -17,7 +17,7 @@
             rel="stylesheet"
         />
         <!-- hls.js for HLS (.m3u8) playback in browsers that lack native support -->
-        <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
     </head>
     <body>
         <!-- App Header -->
@@ -597,7 +597,99 @@
 
                     <hr class="dialog-divider" />
 
-                    <!-- Section 3: Reset / Reset Demo -->
+                    <!-- Section 3: Save & Manage Catalogs -->
+                    <section class="settings-group">
+                        <h3>Save &amp; Manage Catalogs</h3>
+                        <p class="section-desc">
+                            Save the current video library to a named slot in
+                            your browser's local storage and reload it at any
+                            time. Catalogs are stored locally and persist across
+                            sessions.
+                        </p>
+
+                        <!-- Save current -->
+                        <div class="save-catalog-row">
+                            <div class="form-group flex-grow">
+                                <label for="savedCatalogNameInput"
+                                    >Catalog Name</label
+                                >
+                                <input
+                                    type="text"
+                                    id="savedCatalogNameInput"
+                                    placeholder="e.g. My Blender Films, Home Server..."
+                                    maxlength="60"
+                                />
+                            </div>
+                            <div class="save-catalog-btns">
+                                <button
+                                    id="btnSaveCatalog"
+                                    class="btn btn-success"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="15"
+                                        height="15"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="btn-icon"
+                                    >
+                                        <path
+                                            d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"
+                                        ></path>
+                                        <polyline
+                                            points="17 21 17 13 7 13 7 21"
+                                        ></polyline>
+                                        <polyline
+                                            points="7 3 7 8 15 8"
+                                        ></polyline>
+                                    </svg>
+                                    Save Current
+                                </button>
+                                <button
+                                    id="btnExportCatalog"
+                                    class="btn btn-outline"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="15"
+                                        height="15"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="btn-icon"
+                                    >
+                                        <path
+                                            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                                        ></path>
+                                        <polyline
+                                            points="7 10 12 15 17 10"
+                                        ></polyline>
+                                        <line
+                                            x1="12"
+                                            y1="15"
+                                            x2="12"
+                                            y2="3"
+                                        ></line>
+                                    </svg>
+                                    Export JSON
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Saved catalog slots -->
+                        <div id="savedCatalogsList" class="saved-catalogs-list">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </section>
+
+                    <hr class="dialog-divider" />
+
+                    <!-- Section 4: Reset / Reset Demo -->
                     <section class="settings-group flex-space-between">
                         <div>
                             <h3>Reset Library Data</h3>
