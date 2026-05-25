@@ -1355,3 +1355,36 @@ dialog[open] {
         align-self: flex-end;
     }
 }
+
+/* Active Catalog Badge in Main UI */
+.catalog-name-badge {
+    background: rgba(124, 77, 255, 0.15);
+    border: 1px solid rgba(124, 77, 255, 0.3);
+    color: var(--primary-hover);
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    margin-right: 8px;
+    display: inline-block;
+}
+
+/* Active Catalog Banner in Dialog */
+.current-catalog-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(124, 77, 255, 0.08);
+    border: 1px solid rgba(124, 77, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    margin-bottom: 20px;
+}
+.current-catalog-banner .banner-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+.current-catalog-banner strong {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}

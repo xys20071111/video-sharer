@@ -1,0 +1,19 @@
+{
+  "name": "@ipfs-video-share/webui",
+  "version": "1.0.0",
+  "exports": "./src/main.ts",
+  "tasks": {
+    "dev": "deno run -A npm:vite",
+    "build": "deno run -A npm:vite build",
+    "preview": "deno run -A npm:vite preview"
+  },
+  "imports": {
+    "@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.0",
+    "hls.js": "npm:hls.js@^1.6.16",
+    "vite": "npm:vite@^6.3.0"
+  },
+  "compilerOptions": {
+    "lib": ["dom", "dom.asynciterable", "deno.ns"],
+    "strict": true
+  }
+}

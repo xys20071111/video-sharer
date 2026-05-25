@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>IPFS Video Share Hub</title>
+        <title>Video Share Hub</title>
         <meta
             name="description"
             content="A decentralized, IPFS-powered video streaming portal. Easily index, search, and watch HLS streaming videos directly from your browser."
@@ -16,8 +16,7 @@
             href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <!-- hls.js for HLS (.m3u8) playback in browsers that lack native support -->
-        <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
+        <!-- hls.js for HLS (.m3u8) playback -- installed via npm, imported in TypeScript -->
     </head>
     <body>
         <!-- App Header -->
@@ -52,7 +51,7 @@
                             ></circle>
                         </svg>
                         <div class="logo-text">
-                            <h1>Video Share Station</h1>
+                            <h1>Video Share Hub</h1>
                             <span class="logo-subtitle"
                                 >Decentralized Video Sharing</span
                             >
@@ -133,6 +132,9 @@
                     <!-- Status bar -->
                     <section class="status-bar">
                         <div id="dbStats" class="stats-text">
+                            <span id="catalogName" class="catalog-name-badge"
+                                >Demo Catalog</span
+                            >
                             <span id="videoCount">0 videos</span> available on
                             the IPFS network
                         </div>
@@ -204,7 +206,6 @@
                                     class="video-element"
                                     controls
                                     preload="metadata"
-                                    crossorigin="anonymous"
                                 ></video>
                                 <div
                                     id="playerErrorOverlay"
@@ -360,17 +361,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Sidebar Recommendations Column -->
-                        <div class="watch-sidebar-col">
-                            <h3 class="sidebar-title">Recommended Videos</h3>
-                            <div
-                                id="recommendationsContainer"
-                                class="recommendations-list"
-                            >
-                                <!-- Dynamically populated small cards will go here -->
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -400,6 +390,12 @@
                 </header>
 
                 <div class="dialog-body">
+                    <!-- Current Catalog Info -->
+                    <div class="current-catalog-banner">
+                        <span class="banner-label">Active Library:</span>
+                        <strong id="activeCatalogName">Demo Catalog</strong>
+                    </div>
+
                     <!-- Section 1: IPFS Gateway Settings -->
                     <section class="settings-group">
                         <h3>IPFS Gateway Configuration</h3>
@@ -411,18 +407,16 @@
                             <div class="form-group">
                                 <label for="gatewaySelect">Presets</label>
                                 <select id="gatewaySelect">
-                                    <option
-                                        value="https://cloudflare-ipfs.com/ipfs/"
-                                    >
+                                    <option value="https://cloudflare-ipfs.com">
                                         Cloudflare (Fast & CDN Cached)
                                     </option>
-                                    <option value="https://ipfs.io/ipfs/">
+                                    <option value="https://ipfs.io">
                                         IPFS.io (Official Public Gateway)
                                     </option>
-                                    <option value="https://dweb.link/ipfs/">
+                                    <option value="https://dweb.link">
                                         DWeb Link
                                     </option>
-                                    <option value="http://localhost:8080/ipfs/">
+                                    <option value="http://localhost:8080">
                                         Local IPFS Node (localhost:8080)
                                     </option>
                                     <option value="custom">
@@ -435,8 +429,8 @@
                                 <input
                                     type="url"
                                     id="gatewayInput"
-                                    value="https://cloudflare-ipfs.com/ipfs/"
-                                    placeholder="https://gateway.com/ipfs/"
+                                    value="https://cloudflare-ipfs.com"
+                                    placeholder="https://gateway.com"
                                 />
                             </div>
                         </div>
@@ -574,7 +568,7 @@
                                         <input
                                             type="text"
                                             id="importCidInput"
-                                            placeholder="Qm... or bafy..."
+                                            placeholder="Starts with ipfs/ of ipns/"
                                         />
                                         <small class="form-help"
                                             >Loads the catalog file published by
@@ -711,7 +705,7 @@
 
         <!-- Video Player Dialog removed (integrated into Watch View layout) -->
 
-        <!-- Application Logic -->
-        <script src="app.js"></script>
+        <!-- Application Logic (Vite entry point) -->
+        <script type="module" src="/src/main.ts"></script>
     </body>
 </html>
